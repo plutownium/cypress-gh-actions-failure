@@ -11,10 +11,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
       - name: Run cypress tests
         uses: cypress-io/github-action@v5.1.0
         with:
