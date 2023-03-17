@@ -3,7 +3,8 @@ describe('Some Test', () => {
       cy.visit("localhost:5173")
       cy.get("h1").should("exist")
       cy.get("button").should("not.be.enabled")
-      cy.get("input").type("cat, hat, jazz")
+      cy.get("#hat").type("cat, hat, jazz")
+      cy.get("#cat").type("cat, hat, jazz")
       
       cy.get("button").should("be.enabled")
     })
