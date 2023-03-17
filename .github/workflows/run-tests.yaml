@@ -2,7 +2,7 @@ name: run-tests
 
 on:
   pull_request:
-    branches: [development]  # says "run when there's a PR req into the dev branch"
+    branches: [master]  # says "run when there's a PR req into the master branch"
 
 jobs:
   cypress-run:
