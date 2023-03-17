@@ -4,7 +4,7 @@ describe('Some Test', () => {
       cy.get("h1").should("exist")
       cy.get("button").should("not.be.enabled")
       cy.get("input").type("cat, hat, jazz")
-      cy.wait(500)
+      cy.wait(501)
       
       cy.get("button").should("be.enabled")
     })
