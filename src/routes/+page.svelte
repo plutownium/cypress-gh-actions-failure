@@ -1,6 +1,4 @@
 <script>
-    let enabled = false
-
     let text = ""
 </script>
 

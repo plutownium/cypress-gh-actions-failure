@@ -20,4 +20,8 @@ jobs:
         with:
           build: npm run build
           start: npm run dev
-          command: npx cypress run --headed --browser chrome
+      - uses: actions/upload-artifact@v3
+          if: failure()
+          with:
+            name: cypress-screenshots
+            path: cypress/screenshots
