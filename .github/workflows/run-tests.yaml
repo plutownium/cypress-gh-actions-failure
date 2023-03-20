@@ -2,7 +2,7 @@ name: run-tests
 
 on:
   pull_request:
-    branches: [development]  # says "run when there's a PR req into the dev branch"
+    branches: [master]  # says "run when there's a PR req into the master branch"
 
 jobs:
   cypress-run:
@@ -11,13 +11,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
       - name: Run cypress tests
-        uses: cypress-io/github-action@v5.1.0
+        uses: cypress-io/github-action@v5
         with:
           build: npm run build
           start: npm run dev
-          command: npx cypress run --headed --browser chrome
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
